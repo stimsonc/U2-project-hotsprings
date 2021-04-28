@@ -5,6 +5,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
+import pandas as pd
 
 # Imports from this application
 from app import app
@@ -15,25 +16,31 @@ column1 = dbc.Col(
     [
         dcc.Markdown(
             """
-        
-            ## Your Value Proposition
+            ## Soak in Springs: 
+            ## Defeat the Aliens
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            The only known way to repel the invaders is to soak in a thermal spring for 10 mintues, giving immunity to their weapons for 24 hrs. But an alien info-attack will soon erase all digital and hard-copy information on thermal springs. 
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            ✅ This model uses 2017 U.S Census data to predict the distance from a county's population center to the nearest swimmable (≤110 F) spring.
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            ✅ The model will be disguised as a demographic analysis tool. As it will likely fall into enemy hands, the predictions will be imprecise (<20 miles, 20-50 miles, >50 miles + predicted probability).
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Find a spring', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+#gapminder = px.data.gapminder()
+#fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+#           hover_name="country", log_x=True, size_max=60)
+
+# Load census dataframe
+file = 'https://raw.githubusercontent.com/stimsonc/Unit2_thermal_predictor/master/swimmers.csv'
+census = pd.read_csv(file)
+
+# Histogram of Asian data
+fig = px.scatter(census, x='Longitude', y='Latitude', color='Max_surface_temp_F', hover_name='Max_surface_temp_F')
 
 column2 = dbc.Col(
     [
