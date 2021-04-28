@@ -11,7 +11,6 @@ import plotly.express as px
 from joblib import load
 dectree_model = load('assets/dectree.joblib')
 
-
 # Imports from this application
 from app import app
 
@@ -88,6 +87,7 @@ def predict(Hispanic, Drive, MeanCommute, Black, PublicWork):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
+    # Debug set to False in run.py eliminates callback error
 
 layout = dbc.Row([column1, column2, column3])
 
