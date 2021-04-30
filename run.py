@@ -80,6 +80,6 @@ def display_page(pathname):
 
 # Run app server: https://dash.plot.ly/getting-started
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
     # Was True originally
     # Setting to False eliminates callback error

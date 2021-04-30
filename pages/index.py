@@ -31,16 +31,12 @@ column1 = dbc.Col(
     md=4,
 )
 
-#gapminder = px.data.gapminder()
-#fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-#           hover_name="country", log_x=True, size_max=60)
-
 # Load census dataframe
 file = 'https://raw.githubusercontent.com/stimsonc/Unit2_thermal_predictor/master/swimmers.csv'
-census = pd.read_csv(file)
+swimmers = pd.read_csv(file)
 
-# Histogram of Asian data
-fig = px.scatter(census, x='Longitude', y='Latitude', color='Max_surface_temp_F', hover_name='Max_surface_temp_F')
+# Histogram of lat/lon of swimmable springs 
+fig = px.scatter(swimmers, x='Longitude', y='Latitude', color='Max_surface_temp_F', hover_name='Max_surface_temp_F')
 
 column2 = dbc.Col(
     [
