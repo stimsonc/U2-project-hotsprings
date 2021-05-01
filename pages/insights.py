@@ -14,10 +14,11 @@ column1 = dbc.Col(
     [
         dcc.Markdown(
             """
-        
             ## Insights
 
-            The primary insight is that using demographic data, it is possible to predict the location of thermal springs in the United States with a relatively high degree of accuracy.
+            (The Sample Data page has a random selection of rows that can be used to try out the model. Enter the latitude and longitude values into a map to locate the county in question and see if you can find the nearest thermal spring!)
+
+            The primary insight is that using demographic data, it is possible to predict the location of thermal springs in the United States with a relatively high degree of accuracy. 
 
             However, because the target variable is imprecise, even if the model accurately predicts a spring is close by, that just means one is somewhere inside a circle with a radius of 20 miles, which is equivalent to 1,257 square miles. 
 
@@ -43,4 +44,10 @@ column1 = dbc.Col(
     ],
 )
 
-layout = dbc.Row([column1])
+column2 = dbc.Col(
+    [
+        html.Img(src='assets/wildspring.jpg', className='img-fluid'),
+    ]
+)
+
+layout = dbc.Row([column1, column2])

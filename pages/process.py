@@ -14,8 +14,14 @@ column1 = dbc.Col(
     [
         dcc.Markdown(
             """
-        
             ## Process
+
+            Code: [Data wrangling](https://colab.research.google.com/drive/1N_smUCm3c5zPi4yUCYwDkZpK2kq-FtJF?usp=sharing)
+
+            Code: [Model building, evaluation](https://colab.research.google.com/drive/1Lmqgb6XUWd_mFZtrPIyt2OhX1Ji44phg?usp=sharing)
+
+            Dash app repository: [Github](https://github.com/stimsonc/Unit2_thermal_predictor)
+
             The initial idea was to do something with hot springs, as soaking in them is a favorite pastime of mine. I found a dataset with the locations of all thermal springs in the United States. But what to do with that data? I thought it might be interesting to see if the locations of hot springs could be predicted somehow using other data. After searching around a bit I decided on county demographic data from the U.S. census, which I found in a nice clean state at Kaggle.
 
             I created the alien invasion scenario because I wanted a better story for the project than just a fun experiment to see if I could predict the location of a geologic feature from societal factors like income, race, and employment. 
@@ -70,4 +76,12 @@ column1 = dbc.Col(
     ],
 )
 
-layout = dbc.Row([column1])
+
+column2 = dbc.Col(
+    [
+        html.Img(src='assets/riverspring.jpg', className='img-fluid'),
+    ]
+)
+
+
+layout = dbc.Row([column1, column2])

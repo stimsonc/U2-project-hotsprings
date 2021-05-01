@@ -49,7 +49,7 @@ dash_df = wrangle(wrangle_df, dectree_model)
 
 # Display random sample of dash_df
 import plotly.graph_objects as go
-n=6
+n=12
 sample = dash_df.sample(n=n)
 
 fig = go.Figure(data=[go.Table(
