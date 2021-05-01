@@ -33,36 +33,31 @@ column1 = dbc.Col(
 
 column2 = dbc.Col(
     [
-        html.Div(['Hispanic % of population: ',
+        dcc.Markdown("Hispanic percentage of population:"),
         dcc.Input(
             id='Hispanic',
             type='number',
-        )
-        ]),
-        html.Div(['% who drive to work: ',
+        ),
+        dcc.Markdown("Percentage who drive to work:"),
         dcc.Input(
             id='Drive',
             type='number',
-        )
-        ]),
-        html.Div(['Mean commute time: ',
+        ),
+        dcc.Markdown("Mean Commute Time:"),
         dcc.Input(
             id='MeanCommute',
             type='number',
-        )
-        ]),
-        html.Div(['African-American % of population: ',
+        ),
+        dcc.Markdown("African American percentage of population:"),
         dcc.Input(
             id='Black',
             type='number',
-        )
-        ]),
-        html.Div(['Public sector % of workforce: ',
+        ),
+        dcc.Markdown("Percentage who work in the public sector:"),
         dcc.Input(
             id='PublicWork',
             type='number',
         )
-        ])
     ]
 )
 
