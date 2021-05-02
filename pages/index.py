@@ -23,7 +23,7 @@ column1 = dbc.Col(
 
             ✅ This model uses 2017 U.S Census data to predict the distance from a county's population center to the nearest swimmable (≤110 F) spring.
 
-            ✅ The model will be disguised as a demographic analysis tool. As it will likely fall into enemy hands, the predictions will be imprecise (<20 miles, 20-50 miles, >50 miles + predicted probability).
+            ✅ The model will eventually be disguised as a demographic analysis tool. As it will likely fall into enemy hands, the predictions must be imprecise (<20 miles, 20-50 miles, >50 miles).
             """
         ),
         dcc.Link(dbc.Button('Find a spring', color='primary'), href='/predictions')
